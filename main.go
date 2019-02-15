@@ -6,12 +6,11 @@ import (
 
 func main() {
 	n := 4
-	//series := make(chan int, n)
-	fmt.Println(fact(n))
-	/*o fibo_start(series, n)
+	series := make(chan int, n)
+	go fact_start(series, n)
 	for i := range series {
 		fmt.Println(i)
-	}*/
+	}
 }
 
 func fact_start(series chan int, n int) {
